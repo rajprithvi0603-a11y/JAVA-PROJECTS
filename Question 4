@@ -1,0 +1,33 @@
+class StudentMarksCalculator {
+    void info() {
+        System.out.println("Student Marks Calculator");
+    }
+}
+class StudentMarksTwo extends StudentMarksCalculator {
+    void studentmarks(int m1, int m2) {
+        int total = m1 + m2;
+        System.out.println("Total (2 subjects) = " + total);
+    }
+}
+class StudentMarksThree extends StudentMarksCalculator {
+    void studentmarks(int m1, int m2, int m3) {
+        int total = m1 + m2 + m3;
+        System.out.println("Total (3 subjects) = " + total);
+    }
+}
+class StudentMarksFour extends StudentMarksCalculator {
+    void studentmarks(int m1, int m2, int m3, int m4) {
+        int total = m1 + m2 + m3 + m4;
+        System.out.println("Total (4 subjects) = " + total);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        StudentMarksTwo s2 = new StudentMarksTwo();
+        s2.studentmarks(80, 90);
+        StudentMarksThree s3 = new StudentMarksThree();
+        s3.studentmarks(70, 85, 90);
+        StudentMarksFour s4 = new StudentMarksFour();
+        s4.studentmarks(60, 75, 80, 95);
+    }
+}
