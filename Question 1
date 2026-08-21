@@ -1,0 +1,20 @@
+import java.util.*;
+class Area {
+    void area(int s) {
+        System.out.println("Square = " + s*s);
+    }
+    void area(int l, int b) {
+        System.out.println("Rectangle = " + l*b);
+    }
+    void area(double r) {
+        System.out.println("Circle = " + 3.14*r*r);
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Area a = new Area();
+        a.area(5);
+        a.area(10, 6);
+        a.area(7.0);
+    }
+}
