@@ -1,3 +1,6 @@
+```java
+import java.util.Scanner;
+
 class BankAccount {
     String name, type;
     int number;
@@ -29,12 +32,29 @@ class BankAccount {
     }
 
     public static void main(String[] args) {
-        BankAccount a = new BankAccount("Ravi", 1001, "Savings", 10000);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Name: ");
+        String n = sc.nextLine();
+
+        System.out.print("Enter Account Number: ");
+        int no = sc.nextInt();
+
+        System.out.print("Enter Account Type: ");
+        String t = sc.next();
+
+        System.out.print("Enter Initial Balance: ");
+        double b = sc.nextDouble();
+
+        BankAccount a = new BankAccount(n, no, t, b);
+
+        System.out.print("Enter Deposit Amount: ");
+        a.deposit(sc.nextDouble());
+
+        System.out.print("Enter Withdrawal Amount: ");
+        a.withdraw(sc.nextDouble());
 
         a.balanceEnquiry();
-        a.deposit(5000);
-        a.withdraw(3000);
-        a.balanceEnquiry();
-        a.withdraw(15000);
     }
 }
+```
