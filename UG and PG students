@@ -1,0 +1,103 @@
+import java.util.*;
+
+class Student {
+    int studentId;
+    String name, department;
+
+    Student(int id, String n, String dept) {
+        studentId = id;
+        name = n;
+        department = dept;
+    }
+
+    void displayStudentDetails() {
+        System.out.println("Student ID: " + studentId);
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + department);
+    }
+}
+
+class UGStudent extends Student {
+    int semester;
+    double cgpa;
+
+    UGStudent(int id, String n, String dept, int sem, double c) {
+        super(id, n, dept);
+        semester = sem;
+        cgpa = c;
+    }
+
+    void displayUGDetails() {
+        displayStudentDetails();
+        System.out.println("Semester: " + semester);
+        System.out.println("CGPA: " + cgpa);
+    }
+}
+
+class PGStudent extends Student {
+    String specialization, researchTopic;
+
+    PGStudent(int id, String n, String dept, String s, String r) {
+        super(id, n, dept);
+        specialization = s;
+        researchTopic = r;
+    }
+
+    void displayPGDetails() {
+        displayStudentDetails();
+        System.out.println("Specialization: " + specialization);
+        System.out.println("Research Topic: " + researchTopic);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("==== UG Student ====");
+
+        System.out.print("Enter ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Department: ");
+        String dept = sc.nextLine();
+
+        System.out.print("Enter Semester: ");
+        int sem = sc.nextInt();
+
+        System.out.print("Enter CGPA: ");
+        double cgpa = sc.nextDouble();
+        sc.nextLine();
+
+        UGStudent ug = new UGStudent(id, name, dept, sem, cgpa);
+        ug.displayUGDetails();
+
+        System.out.println("\n==== PG Student ====");
+
+        System.out.print("Enter ID: ");
+        id = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Department: ");
+        dept = sc.nextLine();
+
+        System.out.print("Enter Specialization: ");
+        String spec = sc.nextLine();
+
+        System.out.print("Enter Research Topic: ");
+        String topic = sc.nextLine();
+
+        PGStudent pg = new PGStudent(id, name, dept, spec, topic);
+        pg.displayPGDetails();
+
+        sc.close();
+    }
+}
